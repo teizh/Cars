@@ -2,12 +2,15 @@ package com.example.rv2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.rv2.recycler.Car;
+
+import org.w3c.dom.Text;
 
 public class DetailActivity extends AppCompatActivity {
     ImageView imageView;
@@ -18,22 +21,15 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
+        Intent intent = getIntent();
         if (getIntent() != null) {
             Car car = (Car) getIntent().getSerializableExtra("car");
-//            imageView = itemView.findViewById(R.id.imageViewDetail);
-//            imageView.setImageResource(car.getImage());
-//            textView = textView.findViewById(R.id.textViewDetail);
-//            textView.setText(car.getName());
-//            textViewDescription = textViewDescription.findViewById(R.id.textViewDescriptionDetail);
-//            textViewDescription.setText(car.getDescription());
-
-            textView = textView.findViewById(R.id.textViewDetail);
-            ((TextView) findViewById(R.id.textViewDetail)).setText(car.getName());
-
-            System.out.println(car.getImage());
-            System.out.println(car.getName());
-            System.out.println(car.getDescription());
+            imageView = (ImageView) findViewById(R.id.imageViewDetail);
+            imageView.setImageResource(((Car) getIntent().getSerializableExtra("car")).getImage());
+            textView = (TextView) findViewById(R.id.textViewDetail);
+            textView.setText(((Car) getIntent().getSerializableExtra("car")).getName());
+            textViewDescription = (TextView) findViewById(R.id.textViewDescriptionDetail);
+            textViewDescription.setText(((Car) getIntent().getSerializableExtra("car")).getDescription());
         }
     }
 }

@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.rv2.recycler.Car;
 import com.example.rv2.recycler.CarClick;
@@ -36,11 +38,14 @@ public class MainActivity extends AppCompatActivity implements CarClick {
 		adapter = new CarsAdapter(arrayList, this);
 		recyclerView.setAdapter(adapter);
 	}
-
 	@Override
 	public void onClick(Car car) {
 		Intent intent = new Intent(MainActivity.this, DetailActivity.class);
 		intent.putExtra("car", car);
 		startActivity(intent);
+	}
+	@Override
+	public void onPointerCaptureChanged(boolean hasCapture) {
+		super.onPointerCaptureChanged(hasCapture);
 	}
 }

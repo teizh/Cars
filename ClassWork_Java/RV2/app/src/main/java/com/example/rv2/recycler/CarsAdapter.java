@@ -59,7 +59,6 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
 		public void onBind(Car car) {
 			imageView = itemView.findViewById(R.id.imageViewMain);
 			textView = itemView.findViewById(R.id.textViewName);
-
 			imageView.setImageResource(car.getImage());
 			textView.setText(car.getName());
 		}
