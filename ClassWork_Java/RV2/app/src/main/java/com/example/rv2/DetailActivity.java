@@ -21,9 +21,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        Intent intent = getIntent();
         if (getIntent() != null) {
-            Car car = (Car) getIntent().getSerializableExtra("car");
             imageView = (ImageView) findViewById(R.id.imageViewDetail);
             imageView.setImageResource(((Car) getIntent().getSerializableExtra("car")).getImage());
             textView = (TextView) findViewById(R.id.textViewDetail);

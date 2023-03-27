@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements CarClick {
 		arrayList.add(new Car("TOYOTA", "JAPAN CAR-TOYOTA", R.drawable.toyota));
 		arrayList.add(new Car("BMW", "GERMANY CAR", R.drawable.bmw));
 		arrayList.add(new Car("HONDA", "JAPAN CAR-HONDA", R.drawable.honda));
-
 		recyclerView = findViewById(R.id.rv);
 		adapter = new CarsAdapter(arrayList, this);
 		recyclerView.setAdapter(adapter);
